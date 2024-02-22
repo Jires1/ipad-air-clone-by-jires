@@ -1,0 +1,116 @@
+:root{
+    --trasparent-bg-black: rgba(0, 0, 0, 0.71);
+    --global-menu-color: rgba(255, 255, 255, 0.692); 
+}
+
+.global-header__nav{
+    position: relative;
+    top: 0px;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    display: block;
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+    max-height: 44px;
+    font-size: 17px;
+    color: rgb(244, 244, 246);
+    /* background-color: rgba(0, 0, 0, 0.72); */
+}
+
+.global-header__nav__container{
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-inline-start: 10px;
+    padding-inline-end: 15px;
+    height: 44px;
+}
+
+.menu-items{
+    background: #1a1a1a;
+}
+
+.menu-item__item__lists{
+    top: 0;
+    width: 100%;
+    background: #1a1a1a;
+    margin: 0 auto;
+ /* <<<<<<<<---------------------  */
+    padding-top: 8rem;
+    padding-bottom: 8.4rem;
+    line-height: 1.5;
+    z-index: 99;
+}
+
+.menu-list{
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.menu-item__item__label{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: .5rem 0;
+}
+
+.menu-item__item__lists-element{
+    top: 100px; 
+    width: 1024px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    justify-content: left;
+    gap: 10rem;
+
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+}
+
+.menu-item__item__lists__element-priory .nav-link{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.menu-item__item__lists__element-second .nav-link{
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.ipad-nav{
+    position: sticky;
+    top: 100px;
+    max-width:1024px;
+    padding-inline-start: 10px;
+    padding-inline-end: 15px;
+    margin: 1rem auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ipad-nav__title{
+    font-size: 2.1rem;
+    font-weight: 600;
+    opacity: .91;
+}
+
+.ipad-nav__title .nav-link{
+    color: white;
+}
+
+.ipad-nav__options{
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.ipad-nav__options>a.nav-link:hover{
+    color: #4484fc;
+}
+
+.search-link{
+    width: 100%;
+}
