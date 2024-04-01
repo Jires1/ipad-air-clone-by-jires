@@ -1,6 +1,7 @@
-@import url(./css/global.nav.css);
-@import url(./css/mixte.nav.css);
-@import url(./css/nav.spinner.css);
+@import url(./css/nav/global.nav.css);
+@import url(./css/nav/mixte.nav.css);
+@import url(./css/nav/nav.spinner.css);
+@import url(./css/nav/menu.css);
 
 *, *::before, *::after {
     padding: 0; margin: 0;
@@ -18,4 +19,10 @@ html{
 
 body {
     background: black;
+}
+
+@media screen and (max-width:833px) {
+    html {
+        font-size: 70%;
+    }
 }

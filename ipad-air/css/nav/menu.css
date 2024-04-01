@@ -1,0 +1,43 @@
+.menu {
+    width: 30px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+    top: 1px ;
+    left: 10px;
+    z-index: 100;
+}
+  
+.bar {
+    position: absolute;
+    height: 2px;
+    width: 18px; /* Largeur modifiée ici */
+    background: #505050;
+    transition: 0.2s;
+}
+
+.menu:hover .bar{
+    background: #979797cc;
+}
+  
+.bar:nth-child(1) {
+    top: 0;
+}
+  
+.bar:nth-child(2) {
+    top: 10px;
+}
+
+.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+  
+.active .bar:nth-child(2) {
+    transform: rotate(45deg) translate(-5px, -6px);
+    top: 15.5px;
+}
+
+.menu.active {
+    top: -2px;
+    z-index: 100;
+}

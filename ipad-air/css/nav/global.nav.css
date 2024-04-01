@@ -1,0 +1,381 @@
+:root {
+    /*Ipad-Nav*/
+    --nav-background-color: #1a1a1a;
+    --nav-text-color: rgb(244, 244, 246);
+    --nav-font-size: 17px;
+    --nav-max-width: 1024px;
+    --nav-padding-start: 10px;
+    --nav-padding-end: 15px;
+    --nav-height: 4.4rem;
+    --nav-item-font-size: 1.5rem;
+    --nav-item-gap: 10rem;
+    --nav-item-priory-font-size: 2.5rem;
+    --nav-item-priory-color: #e0e0e0;
+    --nav-item-second-font-size: 1.2rem;
+    --nav-item-second-font-weight: 600;
+    /*Ipad-Nav*/
+    --ipad-nav-top: 100px;
+    --ipad-nav-background-color: #1a1a1a;
+    --ipad-nav-title-font-size: 2.1rem;
+    --ipad-nav-title-font-weight: 600;
+    --ipad-nav-title-opacity: 0.91;
+    --ipad-nav-options-gap: 3rem;
+    --ipad-nav-link-hover-color: #4484fc;
+}
+
+.global-header__nav {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    display: block;
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+    max-height: var(--nav-height);
+    font-size: var(--nav-font-size);
+    color: var(--nav-text-color);
+}
+
+.global-header__nav__container {
+    max-width: var(--nav-max-width);
+    margin: 0 auto;
+    padding-inline-start: var(--nav-padding-start);
+    padding-inline-end: var(--nav-padding-end);
+    height: var(--nav-height);
+}
+
+.menu-items {
+    background: var(--nav-background-color);
+}
+
+.menu-item__item__lists {
+    top: 0;
+    width: 100%;
+    background: var(--nav-background-color);
+    margin: 0 auto;
+    padding-top: 8rem;
+    padding-bottom: 8.4rem;
+    line-height: 1.5;
+    z-index: 99;
+}
+
+.menu-list {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.menu-item__item__label {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 0;
+}
+
+.menu-item__item__lists-element {
+    top: var(--ipad-nav-top);
+    width: var(--nav-max-width);
+    margin: 0 auto;
+    font-size: var(--nav-item-font-size);
+    justify-content: left;
+    gap: var(--nav-item-gap);
+    padding-inline-start: var(--nav-padding-start);
+    padding-inline-end: var(--nav-padding-end);
+}
+
+.menu-item__item__lists__element-priory .nav-link {
+    font-size: var(--nav-item-priory-font-size);
+    font-weight: bold;
+    color: var(--nav-item-priory-color);
+}
+
+.menu-item__item__lists__element-second .nav-link {
+    color: var(--nav-text-color);
+    font-size: var(--nav-item-second-font-size);
+    font-weight: var(--nav-item-second-font-weight);
+}
+
+@media screen and (max-width:833px) {
+
+    .global-header{
+        background: inherit;
+    }.bg-changed {
+        background-color: var(--ipad-nav-background-color);
+        transition: background-color .2s ease-out ;
+    }.bg-rm {
+        background-color: inherit;
+        transition: background-color .8s ease-out 1000ms;
+    }
+
+    .global-header__nav{
+        position: static;
+    }
+
+    .global-header__nav__container{
+        display: flex;
+        padding-inline-end: 0;
+    }
+
+    .menu-item__item__label{
+        padding: 0;
+    }
+
+    .menu-list{
+        flex: 1;
+        position: static;
+    }
+}
+
+/* Ipad Nav */
+
+.ipad-nav {
+    position: sticky;
+    top: var(--ipad-nav-top);
+    max-width: var(--nav-max-width);
+    padding-inline-start: var(--nav-padding-start);
+    padding-inline-end: var(--nav-padding-end);
+    margin: 1rem auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ipad-nav__title {
+    font-size: var(--ipad-nav-title-font-size);
+    font-weight: var(--ipad-nav-title-font-weight);
+    opacity: var(--ipad-nav-title-opacity);
+}
+
+.ipad-nav__title .nav-link {
+    color: white;
+}
+
+.ipad-nav__options {
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--ipad-nav-options-gap);
+}
+
+.ipad-nav__options a.nav-link:hover {
+    color: var(--ipad-nav-link-hover-color);
+}
+
+.ipad__option-block{
+    gap: var(--ipad-nav-options-gap);
+    justify-content: space-between;
+}
+
+.search-link {
+    width: 100%;
+}
+
+
+@media screen and (max-width:833px) {
+
+    .ipad-nav{
+        padding-bottom: 0px;
+    }.ipad-show {
+        padding-bottom:  160px;
+        transition: padding-bottom .2s ease-out 180ms;
+    }.ipad-hide {
+        padding-bottom: 0px;
+        opacity: inherit;
+        transition: padding-bottom .6s ease-out 700ms, opacity .6s ease-in 700ms;
+    }
+
+    .ipad__option-block {
+        position: absolute;
+        left: 50%;
+        top: 50px;
+        transform: translate(-50%);
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+        width: 100%;
+        padding-inline-start: 4.2rem;
+        padding-inline-end: 4.2rem;
+    }
+
+    .ipad__option-block .nav-link{
+        position: relative;
+        font-size: 1.3rem !important; 
+        margin-bottom: 1.2rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px solid #525251;
+        transform: translateY(-130px);
+    }.appear-menu{
+        animation: appearing .5s alternate 200ms ease-in-out ;
+    }.hide-menu{
+        transition: opacity .2s ease-in-out 100ms;
+        animation: desappearing 1S normal ease-out;
+    }
+
+    .ipad__option-block .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .ipad__option-block .nav-link.appear-menu-stand{
+        opacity: 1;
+        transition: opacity .5s ease-in-out 200ms,  transform .5s ease-in-out 200ms  ;
+        transform: translateY(10px);
+    }
+
+    /* Ipad Menu option-block */
+    @keyframes appearing {
+        0%{
+            transform: translateY(-70px);
+            opacity: 0;
+        }
+        20%{
+            transform: translateY(-40px);
+        }
+        100%{
+            transform: translateY(10px);
+        }
+    }
+
+    @keyframes desappearing {
+        0%{
+            transform: translateY(10px);
+            opacity: 1;
+        }
+
+        20%{
+            transform: translateY(0px);
+            opacity: .5;
+        }
+
+        100%{
+            transform: translateY(-70px);
+            opacity: 0;
+        }
+    }
+
+    /* Ipad Arrows Button */
+
+    .ipad__option-block {
+        display: flex;
+    }
+
+    .i-btn {
+        position: absolute;
+        width: 2px;
+        height: 15px;
+        background-color: #acacac;
+        top: 50%;
+    }
+
+    .i-arrow{
+        position: relative;
+        width: 25px;
+        height: 25px;
+    }
+
+    .left-btn {
+        transform: translate(-50%, -50%) rotate(45deg);
+        left: 25%;
+    }
+
+    .right-btn {
+        transform: translate(-50%, -50%) rotate(-45deg);
+        right: 25%;
+    }
+
+    .left-btn.active {
+        animation: ArrowRightLeft .4s ease-in normal;
+    }
+
+    .right-btn.active {
+        animation: ArrowRightDown .4s ease-in normal;
+    }
+
+    .right-btn.down {
+        transform: translate(-50%, -50%) rotate(-130deg);
+    }
+
+    .left-btn.down {
+        transform: translate(-50%, -50%) rotate(130deg);
+    }
+
+    @keyframes ArrowRightDown {
+        0%{
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        20%{
+            transform: translate(-50%, -50%) rotate(-70deg);
+        }
+        50%{
+            transform: translate(-50%, -50%) rotate(-90deg);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(-130deg);
+        }
+    }
+
+  
+    @keyframes ArrowRightLeft {
+        0%{
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        20%{
+            transform: translate(-50%, -50%) rotate(70deg);
+        }
+        50%{
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(130deg);
+        }
+    }
+
+    .left-btn.inverse {
+        animation: InverseLeftUp .9s ease-out normal;
+    }
+
+    .right-btn.inverse {
+        animation: InverseRightUp .9s ease-out normal;
+    }
+
+    .left-btn.up {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .right-btn.up {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    @keyframes InverseRightUp {
+        0%{
+            transform: translate(-50%, -50%) rotate(-130deg);
+        }
+        20%{
+            transform: translate(-50%, -50%) rotate(-90deg);
+        }
+        50%{
+            transform: translate(-50%, -50%) rotate(-70deg);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+  
+    @keyframes InverseLeftUp {
+        0%{
+            transform: translate(-50%, -50%) rotate(130deg);
+        }
+        20%{
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+        50%{
+            transform: translate(-50%, -50%) rotate(70deg);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+
+}

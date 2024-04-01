@@ -1,0 +1,464 @@
+
+/* Apple Links Nav */
+:root {
+    --global-menu-color: #cccc;
+    --nav-background-color: #1a1a1a;
+    --nav-text-color: rgb(244, 244, 246);
+    --nav-font-size: 17px;
+    --nav-max-width: 1024px;
+    --nav-padding-start: 10px;
+    --nav-padding-end: 15px;
+    --nav-height: 44px;
+    --nav-item-font-size: 1.5rem;
+    --nav-item-gap: 10rem;
+    --nav-item-priory-font-size: 2.5rem;
+    --nav-item-priory-color: #e0e0e0;
+    --nav-item-second-font-size: 1.2rem;
+    --nav-item-second-font-weight: 600;
+    --ipad-nav-top: 100px;
+    --ipad-nav-title-font-size: 2.1rem;
+    --ipad-nav-title-font-weight: 600;
+    --ipad-nav-title-opacity: 0.91;
+    --ipad-nav-options-gap: 3rem;
+    --ipad-nav-link-hover-color: #4484fc;
+}
+
+/* Common styles */
+.row {
+    display: flex;
+}
+
+.absolute {
+    position: absolute;
+}
+
+/* Menu styles */
+.menu-h {
+    color: var(--global-menu-color);
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+}
+
+.menu-link {
+    font-size: 1.15rem;
+    color: #cccccc;
+    letter-spacing: 0.5px;
+}
+
+.small-link {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    font-weight: bolder;
+}
+
+/* Menu items animation */
+.menu-item__item__label:hover {
+    cursor: pointer;
+}
+
+.menu-items {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: -10%;
+    opacity: 0;
+    overflow: hidden;
+    max-height: 0px;
+
+    transition: all 0.2s ease-out 200ms;
+}
+
+.menu-item__item__lists {
+    display: block;
+    overflow: hidden;
+    height: auto;
+
+    transition: all 0.2s 300ms;
+}
+
+.hide-list {
+    opacity: 0;
+    position: absolute;
+}
+
+.list-view {
+    top: 0;
+    opacity: 1;
+    height: auto;
+    max-height: 1000px;
+    transition: all 0.3s ease 200ms;
+}
+
+.show {
+    z-index: 999;
+    opacity: 1;
+}
+
+/* Bg blur */
+.menu-items-bg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.007);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    transition: height 0.2s 300ms;
+    z-index: -1;
+}
+
+/* Animtaiton dor hidding/showing li content */
+.hide-co {
+    position: relative;
+    opacity: 0;
+
+    transition: all 0.9s 400ms, opacity 0.2s 200ms;
+}
+
+.show-co {
+    top: 0;
+    opacity: 1;
+}
+
+.li-hide {
+    position: relative;
+    top: -5px;
+    opacity: 0;
+    
+    transition: 0.2s ease 100ms;
+}
+
+.li-show {
+    opacity: 1;
+    top: 0;
+}
+
+/* Search form styles */
+.form-search__container {
+    flex-direction: row-reverse;
+}
+
+.search-btn {
+    outline: none;
+    background: none;
+    border: none;
+}
+
+.form-search__container{
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    padding-inline-start: -1rem;
+    gap: 1rem;
+}
+
+.search{
+    display: contents;
+}
+
+.search input{
+    width: 100%;
+    outline: none ;
+    background: none ;
+    border: none;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.search input:focus, .search input:focus-visible{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+.search-link .small-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: .3rem;
+    padding: .3rem .5rem .3rem 0rem;
+}
+
+.search-link .small-link:hover{
+    background: #9b9b9b41;
+    border-radius: 4px;
+}
+
+.search-link .small-link>span {
+    padding-left: .5rem;
+    display: flex;
+}
+
+.search-link .small-link>span>svg{
+    fill: #e0e0e0;
+}
+
+.search-link .small-link:hover>span>svg{
+    fill: #fff;
+}
+
+/* icons */
+.icons {
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    width: 7%;
+}
+
+.apple-icon{
+    padding-top: 0.3rem;
+}
+
+/* Both icons */
+.search-icon, .menu-icon, .shop-icon {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Search icon style */
+.search-btn >svg{
+    fill: #9b9b9b;
+}
+
+.search-icon > a > svg {
+    fill: #cccccc;
+}
+
+.search-icon svg:hover {
+    fill: white;
+}
+
+/* Buy button styles */
+.buy--btn {
+    font-size: 1.2rem;
+    color: #cccccc;
+    background: #0059ff;
+    padding: .5rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.buy--btn:hover {
+    background: #196aff;
+}
+
+/* Shop-icon styles */
+.shop-icon a > svg {
+    fill: #cccccc;
+}
+
+.shop-icon a > svg:hover{
+    fill : white
+}
+
+/* Menu-icon styles */
+.menu-icon { 
+    display: none;
+}
+
+.menu-icon svg {
+    fill: #585858;
+}
+
+/* Ipad Nav-link styles */
+.ipad-nav__options .nav-link {
+    letter-spacing: 0.5px;
+    font-size: 1.19rem;
+    color: white;
+    font-weight: lighter;
+}
+
+.ipad-nav__options p.nav-link {
+    color: #9b9b9b;
+}
+
+.p-head {
+    color: #9b9b9b;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+
+    & a {
+        color: #4484fc;
+        text-decoration: underline;
+    }
+}
+
+.h-head {
+    color: #e0e0e0;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-link .small-link{
+    margin-bottom: .5rem;
+}
+
+.profile-link .small-link:hover>span>svg{
+    fill: #fff;
+}
+
+.profile-link .small-link, .profile-link .small-link>span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.arrow-right, .arrow-right svg {
+    display: none;
+}
+
+.profile-link .small-link>span>svg {
+    fill: #585858;
+    width: 11px;
+}
+
+.menu-list__container{
+    width: 90%;
+    padding-inline-start: 1.5rem;
+    scroll-padding-inline-end: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width:833px) {
+    
+    .menu-list__container {
+        width: 88%;
+        justify-content: space-between;
+        padding-inline-start: 0;
+        scroll-padding-inline-end: 0;
+        align-items: start;
+
+        position: absolute;
+        top: -25px;
+        left: 0;
+        flex-direction: column;
+        height: auto;
+        padding-top: 6rem;
+        width: 100vw;
+        /* background: #1a1a1a; */
+        opacity: 0;
+        transition: opacity .4s ease-in-out 200ms;
+        z-index: -2;
+    }
+
+    .menu-list__container.show{
+        z-index: 100;
+        opacity: 1;
+    }
+
+    .menu-item__item__label{
+        align-items: center;
+        justify-content: space-between;
+        padding-left:48px;
+        padding-right: 20px;
+        width: 100%;
+        max-height: 30px;
+        opacity: 0;
+
+        transition: opacity .2s 150ms ease-in-out, max-height 0.2s 150ms ease-in-out;
+    }
+
+    .menu-item__item__label.visible {
+        opacity: 1;
+        max-height: 100px;
+    }
+
+    .arrow-right{
+        display: flex;
+        transform: rotate(180deg);
+        padding-left: 3px;
+        transition: all .2s;
+    }
+
+    .arrow-right svg {
+        display: block;
+        opacity: 0;
+        fill: white;
+    }
+
+    .menu-item__item__label:hover .arrow-right svg{
+        fill: white;
+        opacity: 1;
+        transition: fill .3s;
+    }
+
+    .menu-item__item__label:hover .arrow-right{
+        padding-left: 0px;
+    }
+
+    .menu-link {
+        font-size: 2.3rem;
+        color: #e0e0e0;
+        font-weight: bold;
+    }
+
+    .icons{
+        width: 25%;
+        align-content: center;
+    }
+
+    .icon-scale{
+        max-width: 55px;
+        width: auto;
+        height: auto;
+        max-height: 55px;
+    }
+
+    .icon-apple-scale{
+        width: 18px;
+        height: 18px;
+    }
+
+
+    .menu-icon{
+        padding-bottom: 0.3rem;
+        margin-right: .5rem;
+        display: block;
+    }
+
+    .menu-icon__a {
+        justify-content: center;
+    }
+
+    .menu-items{
+        top: 0;
+        opacity: 0;
+        height: auto;
+        max-height: 0;
+        height: 100%;
+        transition: max-height 0.5s 100ms ease-in-out, 
+                        opacity 0.5s 100ms ease-in-out;
+    }
+
+    .menu-items.visible {
+        max-height: 100vh;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:426px) {
+    .icons{
+        width: 45%;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .icons{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:280px) {
+    .icons{
+        width: 70%;
+        position: relative;
+        right: 42px;
+    }
+}
