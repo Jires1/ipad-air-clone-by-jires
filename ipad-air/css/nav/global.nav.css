@@ -94,6 +94,14 @@
     padding-inline-end: var(--nav-padding-end);
 }
 
+.profile-link  li{
+    overflow-y: hidden;
+}
+
+.search-link li {
+    overflow-y: hidden;
+}
+
 .menu-item__item__lists__element-priory .nav-link {
     font-size: var(--nav-item-priory-font-size);
     font-weight: bold;
@@ -200,8 +208,19 @@
     width: 100%;
 }
 
+@media only screen and (max-width: 1000px) {
+    .menu-item__item__lists-element {
+        width: 100%;
+    }
+}
 
 @media screen and (max-width:833px) {
+
+    .menu-item__item__lists__element-priory .nav-link {
+        font-size: var(--nav-item-priory-font-size-xl-ms);
+        width: 300px;
+        display: block;
+    }
 
     .menu-item__item__lists__element-priory .nav-link {
         font-size: var(--nav-item-priory-font-size-xl);
@@ -233,14 +252,6 @@
 
     div[list='spinner'] {
         overflow-y: scroll;
-    }
-
-    .profile-link  li{
-        overflow-y: hidden;
-    }
-
-    .search-link li {
-        overflow-y: hidden;
     }
 
     .ipad-nav{

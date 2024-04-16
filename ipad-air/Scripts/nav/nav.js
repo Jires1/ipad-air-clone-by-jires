@@ -7,10 +7,11 @@ function itemsHeight(element) {
     $(".menu-items-bg").css("height", `${remainingHeight}px`)
 }
 
+
 $(".menu-item__item__label").on('mouseenter', function(){
     var labelList = $(this).attr('list');
     // console.log(labelList);
-    $('.menu-items').addClass('list-view')
+    $('.menu-items').addClass('list-view');
     $(".menu-item__item__lists").removeClass('show').addClass('hide-list');
 
     var listView = $(`.menu-item__item__lists[list='${labelList}']`);

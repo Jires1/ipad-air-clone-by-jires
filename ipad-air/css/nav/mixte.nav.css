@@ -68,7 +68,7 @@
     overflow: hidden;
     max-height: 0px;
 
-    transition: all 0.2s ease-out 200ms;
+    transition: all 0.2s ease-in 200ms ,top 0.1s ease-in;
 }
 
 .menu-item__item__lists {
@@ -89,7 +89,6 @@
     opacity: 1;
     height: auto;
     max-height: 1000px;
-    transition: all 0.3s ease 200ms;
 }
 
 .show {
@@ -515,7 +514,6 @@
     .btn-back{
         z-index: -9;
         opacity: 0;
-
         transition: .1s ease-in 100ms;
     }.active{
         opacity: 1;

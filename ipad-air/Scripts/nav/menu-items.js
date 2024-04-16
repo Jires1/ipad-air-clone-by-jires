@@ -2,7 +2,7 @@ $('.menu-item__item__label').on('click', function() {
     // $('.menu-list').toggleClass('clicked');
 
     $(".menu-list__container").toggleClass('anim-left');
-    $(".menu-item__item__lists").removeClass('anim-right')
+    $(".menu-item__item__lists").removeClass('anim-right');
 
     setTimeout(() => {
         let labelList = $(this).attr('list');
@@ -23,13 +23,17 @@ $('.btn-back').on('click', function() {
         $(`.menu-item__item__lists`).removeClass('show');
         $('.btn-back').removeClass('active');
         $(".menu-list__container").addClass('show');
-        $('.menu-items').addClass('overflow');
+        $('.menu-items').removeClass('overflow');
     }, 450);
+
 });
 
 
 $('.icons .search-icon a, .icons .search-icon').on('click', function(event){
     event.preventDefault();
+    if ($('.ipad-nav').hasClass('ipad-show')) {
+        $('#ipad__option-menu').trigger('click');
+    }
 
     $('.menu').toggleClass('active');
     
@@ -49,6 +53,10 @@ $('.icons .shop-icon a, .icons .shop-icon').on('click', function(event){
     event.preventDefault();
     $('.menu').toggleClass('active');
     var element = $('[list="bag"]');
+
+    if ($('.ipad-nav').hasClass('ipad-show')) {
+        $('#ipad__option-menu').trigger('click');
+    }
 
     element.find('.hide-co').removeClass('hide-co');
     $('.menu-items').addClass('list-view')
