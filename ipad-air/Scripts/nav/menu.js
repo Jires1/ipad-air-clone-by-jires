@@ -10,37 +10,52 @@ $(document).ready(function(){
         })
     }
 
-    const menuListHide = () =>{
-        $(".menu-item__item__label").get().reverse().each((index, element)=> {
-            console.log(index, element)
-        })
-    }
+
 
     $('.menu-item__item__lists').addClass('hide-list')
 
     $('.menu-icon').on('click', function(event){
-        event.preventDefault();
-        $('.menu').toggleClass('active');
-        $(".menu-items").toggleClass('visible')
-        $('.menu-list__container').toggleClass(['show'])
 
-        if (!$(".menu-item__item__label").hasClass('visible')){
-            menuListShow();
-        }else{
-            $(".menu-item__item__label").each((index, element) => {
-                setTimeout(() => {
-                    element.classList.toggle('visible')
-                }, 0);
-            })
-        }
-        if ($('.ipad-nav').hasClass('ipad-show')) {
-            $('#ipad__option-menu').trigger('click')
+        if ( $("div[list='bag']").hasClass('show') | $("div[list='search']").hasClass('show') ) {
+            event.preventDefault();
+            $('.menu').toggleClass('active');
+            $(".menu-items").toggleClass('visible');
+            $('.menu-item__item__lists').removeClass('show');
+        } else {
+            event.preventDefault();
+            $('.menu').toggleClass('active');
+            $(".menu-items").toggleClass('visible')
+            $('.menu-list__container').addClass(['hidden'])
+            $('.menu-list__container').toggleClass(['show','hidden']);
+            setTimeout(() => {
+                $('.menu-list__container').toggleClass(['bg'])
+            }, 1000);
+
+            if (!$(".menu-item__item__label").hasClass('visible')){
+                menuListShow();
+            }else{
+                $(".menu-item__item__label").each((index, element) => {
+                    setTimeout(() => {
+                        element.classList.toggle('visible')
+                    }, 0);
+                })
+            }
+            if ($('.ipad-nav').hasClass('ipad-show')) {
+                $('#ipad__option-menu').trigger('click')
+            }
+            if (!$('.menu').hasClass('active')) {
+                $('.menu-item__item__lists').removeClass('show');
+                $(".menu-list__container").removeClass(['show', 'hidden']);
+                $('.btn-back').removeClass('active');
+                $('.menu-items').removeClass('overflow');
+
+            }
         }
         
     })
     
     const checkMediaQuery = () => {
-        if(window.matchMedia('(max-width:833px)').matches){
+        if($(window).innerWidth() <= 833){
             $('.menu-item__item__label').off('mouseenter');
             $(".search-icon, .shop-icon, .apple-icon,.menu-items-bg").off('mouseenter');
             $('.search-icon, .shop-icon').off('click');
@@ -52,6 +67,9 @@ $(document).ready(function(){
     }
 
     checkMediaQuery();
-    $(window).on('resize', checkMediaQuery());
-    console.log("active")
+    $(window).on('resize', ()=> {
+        const width = $(window).innerWidth();
+        console.log(width);
+    });
+    console.log("end")
 })

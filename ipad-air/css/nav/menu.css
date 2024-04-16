@@ -39,5 +39,5 @@
 
 .menu.active {
     top: -2px;
-    z-index: 100;
+    z-index: 101;
 }

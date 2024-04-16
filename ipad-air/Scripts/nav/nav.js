@@ -9,7 +9,7 @@ function itemsHeight(element) {
 
 $(".menu-item__item__label").on('mouseenter', function(){
     var labelList = $(this).attr('list');
-    console.log(labelList);
+    // console.log(labelList);
     $('.menu-items').addClass('list-view')
     $(".menu-item__item__lists").removeClass('show').addClass('hide-list');
 
