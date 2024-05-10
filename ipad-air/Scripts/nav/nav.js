@@ -2,9 +2,9 @@ function itemsHeight(element) {
     const childElement = element.get(0).getBoundingClientRect();
     
     $('.menu-items').css("height", `${childElement.height}px`)
-    var remainingHeight = $(window).height() - childElement.height - 3
+    var remainingHeight = $(window).height() - childElement.height - 0.5
     // console.log(remainingHeight);
-    $(".menu-items-bg").css("height", `${remainingHeight}px`)
+    $(".menu-items-bg").css("height", `100%`);
 }
 
 

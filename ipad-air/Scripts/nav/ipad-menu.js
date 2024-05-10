@@ -23,6 +23,23 @@ const ipadDesappearing = () => {
         });
 }
 
+$(window).on('scroll', function () {
+    if (!$('.right-btn').hasClass('active')){ 
+        $('.right-btn').toggleClass('active');
+        $('.left-btn').toggleClass('active');
+        $('.ipad-nav').addClass('ipad-hide');
+        ipadDesappearing();
+        
+        setTimeout(() => {
+            $('.right-btn').toggleClass('down').removeClass(['inverse','up']);
+            $('.left-btn').toggleClass('down').removeClass(['inverse','up']);
+            $('.ipad-nav').removeClass('ipad-bg');
+        }, 390);
+        $('.global-header').removeClass('bg-changed')
+        $('.ipad-nav').removeClass('ipad-show');
+    }
+})
+
 $('#ipad__option-menu').on('click', (event)=>{
     event.preventDefault();
 
@@ -31,6 +48,7 @@ $('#ipad__option-menu').on('click', (event)=>{
         $('.right-btn').addClass('inverse');
         $('.left-btn').addClass('inverse');
         $('.ipad-nav').addClass('ipad-show');
+        $('.ipad-nav').addClass('ipad-bg');
         ipadAppearing();
 
         setTimeout(() => {
@@ -40,7 +58,6 @@ $('#ipad__option-menu').on('click', (event)=>{
         }, 800);
         $('.global-header').removeClass('bg-rm');
         $('.ipad-nav').removeClass('ipad-hide');
-
 
     }else{
         $('.global-header').addClass('bg-rm');
@@ -52,6 +69,7 @@ $('#ipad__option-menu').on('click', (event)=>{
         setTimeout(() => {
             $('.right-btn').toggleClass('down').removeClass(['inverse','up']);
             $('.left-btn').toggleClass('down').removeClass(['inverse','up']);
+            $('.ipad-nav').removeClass('ipad-bg');
         }, 390);
         $('.global-header').removeClass('bg-changed')
         $('.ipad-nav').removeClass('ipad-show');
