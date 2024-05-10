@@ -1,7 +1,14 @@
+/* nav imports */
 @import url(./css/nav/global.nav.css);
 @import url(./css/nav/mixte.nav.css);
 @import url(./css/nav/nav.spinner.css);
 @import url(./css/nav/menu.css);
+
+/* sections imports */
+@import url(./css/sections/section.css);
+@import url(./css/sections/hero/hero.css);
+@import url(./css/sections/features/features.css);
+@import url(./css/sections/design/design.css);
 
 *, *::before, *::after {
     padding: 0; margin: 0;
