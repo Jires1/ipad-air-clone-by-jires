@@ -1,0 +1,98 @@
+.section-hero__main{
+    max-height: 150vh ;
+    overflow: hidden;
+    justify-content: center;
+    padding-top: 8rem;
+    /* align-items: center; */
+}
+
+.hero__h{
+    margin-top: 60vh;
+    font-weight: 600;
+}.hide{
+    opacity: 0;
+}
+
+.section-hero__main__container{
+    justify-content: center;
+}
+
+.wrap-image{
+    overflow: hidden;
+}
+
+.content {
+    position: relative;
+    z-index: -2;
+}
+   
+.video-hero {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    width: 936px;
+    height: 367px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen  and (max-width:1922px) {
+    .content {
+        /* overflow: hidden;
+        width: 936px;
+        height: 367px;
+        background-size: 936px 367px;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-image: none;
+        margin-top: 0;
+        max-width: 100%;
+        background-position: 50%; */
+        overflow: hidden;
+        position: fixed; /* Make the container fixed to the viewport */
+        width: 936px;
+        height: 367px;
+        top: 50%; /* Position vertically at 50% */
+        left: 50%; /* Position horizontally at 50% */
+        transform: translate(-50%, -50%); /* Center the container using transforms */
+        display: flex; /* Set flexbox for positioning child elements */
+        flex-direction: column; /* Arrange child elements vertically */
+        align-items: center; /* Center child elements horizontally */ 
+
+    }
+}
+
+@media screen and (max-width:1068px) {
+    .content {
+        position: absolute;
+        width: 692px;
+        height: 272px;
+        justify-content: center;
+        align-items: center;
+        background-size: 692px 272px;
+        background-repeat: no-repeat;
+        background-image: url(../../../Assets/images/hero/media/main__gfg5jgz11r22_medium.jpg);
+    }
+
+    .video-hero {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 734px){
+    .content {
+        width: 375px;
+        height: 529px;
+        justify-content: center;
+        align-items: center;
+        background-size: 375px 529px;
+        background-repeat: no-repeat;
+        background-image: url(../../../Assets/images/hero/media/main__gfg5jgz11r22_small.jpg);
+    }
+
+    .wrap-image{
+        visibility: hidden;
+    }
+}

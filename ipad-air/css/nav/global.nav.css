@@ -27,6 +27,12 @@
     --ipad-nav-link-hover-color: #4484fc;
 }
 
+/* .global-header {
+    position: fixed;
+    left: 0; right: 0; top: 0;
+    z-index: 10000;
+} */
+
 .global-header__nav {
     position: relative;
     top: 0;
@@ -40,6 +46,8 @@
     max-height: var(--nav-height);
     font-size: var(--nav-font-size);
     color: var(--nav-text-color);
+}.display-none{
+    display: none;
 }
 
 .global-header__nav__container {
@@ -127,10 +135,12 @@
         transition: background-color .2s ease-out ;
     }.bg-rm {
         background-color: inherit;
-        transition: background-color .8s ease-out 1000ms;
+        transition: background-color 0.7s ease-in-out 180ms;
     }
 
     .global-header__nav{
+        overflow-y: hidden;
+    }.static{
         position: static;
     }
 
@@ -168,18 +178,40 @@
 /* Ipad Nav */
 
 .ipad-nav {
-    position: sticky;
-    top: var(--ipad-nav-top);
+    position: fixed;
+    left: 0;
+    top: 44px;
+    right: 0;
     max-width: var(--nav-max-width);
     padding-inline-start: var(--nav-padding-start);
     padding-inline-end: var(--nav-padding-end);
-    margin: 1rem auto;
     justify-content: space-between;
     align-items: center;
     overflow-y: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}.fixed{
+    left: 0;
+    top: 0;
+    right: 0;
+}.ipad-bg{
+    background-color: var(--ipad-nav-background-color);
+    transition: background-color .2s ease-out 400ms;
+}
+
+.bg-nav{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 4.3rem;
+    background-color: rgba(0,0,0,0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: background-color .2s ease-in-out 80ms;
+    z-index: 0;
 }
 
 .ipad-nav__title {
+    padding-top: 1rem;
     font-size: var(--ipad-nav-title-font-size);
     font-weight: var(--ipad-nav-title-font-weight);
     opacity: var(--ipad-nav-title-opacity);
@@ -190,6 +222,7 @@
 }
 
 .ipad-nav__options {
+    padding-top: 1rem;
     justify-content: space-between;
     align-items: center;
     gap: var(--ipad-nav-options-gap);

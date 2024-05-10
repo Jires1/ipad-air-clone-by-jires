@@ -1,0 +1,37 @@
+:root{
+    --section-padding-base-top: 204px;
+    --section-padding-base-bottom: 220px;
+    
+    --localnav-background-color: #ffffffb8;
+    --localnav-background-color-dark: #000000b8;
+}
+
+.section {
+    z-index: -1;
+    overflow: hidden;
+    padding-top: 8rem;
+}
+
+.title {
+    font-size: 8.5rem;
+    background: #fff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-decoration-break: clone;
+    background-image: linear-gradient(129deg, #dc79ff, #256bfa);
+}
+
+.anime-text {
+    background-image :(90deg, #f56772 0.00%, #ba6bff 0%, black 0%);
+}
+
+.headline {
+    font-size: 96px;
+}
+
+.paragraph{
+    font-size: 28px;
+    font-weight: 500;
+    width: 490px;
+}

@@ -1,0 +1,8 @@
+.section-design {
+    background-color: white;
+    padding-top: 0;
+}
+.section-design__container__headline {
+    justify-content: center;
+    margin-bottom: 8rem;
+}
